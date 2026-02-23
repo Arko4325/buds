@@ -1,14 +1,14 @@
 <!DOCTYPE html>
 <html lang="uk">
+   <script src="script.js"></script> 
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Навушники Galaxy Buds - Samsung Store</title>
     <link rel="stylesheet" href="style.css" />
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
-    />
+  <a href="https://arko4325.github.io/Koshyk/index.html" class="cart" style="text-decoration: none;">
+    🛒 Кошик: <span id="cart-count">0</span>
+</a>
   </head>
   <body>
     <header>
@@ -47,7 +47,8 @@
                   <li>🎧 8 год + 30 год від кейсу</li>
                 </ul>
                 <div class="product-price">8 999 ₴</div>
-                <a href="#" class="cta-button">Придбати</a>
+                <button class="buy-btn" onclick="addToCart('Galaxy Buds3 Pro', 8999.00, 'https://encrypted-tbn0.gstatic.com/shopping?q=tbn:ANd9GcRJ_naL7rpesDzhmHYTaHswxkaL20az5S2peXmnRMEhmeygBynpP2WVKaj95JZRiq-b5gf-p3EUfyV9C3C8ciWZbyMFI5hcF0-LIjJV5Nk0XuzbzuPsjvyVUbIsJAlnCHh7lKyiTQ&usqp=CAc')">Додати у кошик</button>
+      
               </div>
             </div>
 
@@ -66,7 +67,8 @@
                   <li>📲 Автоматичне перемикання</li>
                 </ul>
                 <div class="product-price">6 499 ₴</div>
-                <a href="#" class="cta-button">Придбати</a>
+             <button class="buy-btn" onclick="addToCart('Galaxy Buds3 ', 6499.00, 'https://encrypted-tbn3.gstatic.com/shopping?q=tbn:ANd9GcTFGAR8WUG01hcT-6Z6kIkJpY5RT-V0FD0loTyWHrq9OHOdkS-7svt7etWbe6wVzvh0xRwEZr0haZnjQCaPzTrYvNnqMnWeVYvcK4XUFrOQ8sx-5dHFroK2e-gdqcsduAABChVK9A&usqp=CAc')">Додати у кошик</button>
+      
               </div>
             </div>
 
@@ -85,7 +87,8 @@
                   <li>💰 Найкраща ціна</li>
                 </ul>
                 <div class="product-price">4 199 ₴</div>
-                <a href="#" class="cta-button">Придбати</a>
+               <button class="buy-btn" onclick="addToCart('Galaxy Buds3 Fe', 4199.00, 'data:image/webp;base64,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')">Додати у кошик</button>
+      
               </div>
             </div>
           </div>
